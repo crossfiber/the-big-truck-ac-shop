@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/shop-front.jpg" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Hepta+Slab:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
 <style>
@@ -56,10 +56,10 @@
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
 @media(max-width:768px){html{scroll-padding-top:calc(var(--nav-h-sm) + 10px)}}
 body{font-family:'Archivo',system-ui,sans-serif;color:var(--text);background:var(--bone);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:800;line-height:1.03;letter-spacing:-0.015em}
+h1,h2,h3,h4{font-family:'Hepta Slab',Georgia,serif;font-weight:700;line-height:1.12;letter-spacing:0}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.overline{font-size:0.76rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel)}
+.rule{width:46px;height:4px;background:var(--steel);margin-bottom:18px}
 .wrap{max-width:1220px;margin:0 auto;padding:0 40px}
 @media(max-width:768px){.wrap{padding:0 22px}}
 
@@ -107,7 +107,7 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .drawer-close{background:none;border:none;font-size:1.4rem;color:var(--bone);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
 .drawer-close:hover{color:var(--steel-lite)}
 .drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
-.drawer-links a{padding:16px 22px;color:var(--bone);font-weight:700;font-size:1.16rem;letter-spacing:-0.01em;border-bottom:1px solid var(--line-d-soft);transition:color .2s,background .2s,padding-left .2s}
+.drawer-links a{padding:16px 22px;color:var(--bone);font-family:'Hepta Slab',Georgia,serif;font-weight:600;font-size:1.12rem;border-bottom:1px solid var(--line-d-soft);transition:color .2s,background .2s,padding-left .2s}
 .drawer-links a:hover{color:#fff;background:var(--graphite-2);padding-left:28px}
 .drawer-footer{padding:18px 22px calc(20px + env(safe-area-inset-bottom));border-top:1px solid var(--line-d);display:flex;flex-direction:column;gap:12px}
 .drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--ink);font-weight:800;font-size:1.02rem;padding:13px}
@@ -120,36 +120,39 @@ body.drawer-open .mobile-actions{visibility:hidden}
 
 /* HERO */
 .hero{position:relative;min-height:88vh;min-height:88dvh;display:flex;align-items:flex-end;padding:calc(var(--nav-h) + 40px) 0 58px;background:var(--ink)}
+.hero-photo-m{display:none}
 .hero::before{content:'';position:absolute;inset:0;background-image:url('assets/shop-front.jpg');background-size:cover;background-position:center 30%;z-index:0}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,25,29,0.72) 0%,rgba(21,25,29,0.28) 34%,rgba(21,25,29,0.42) 62%,rgba(21,25,29,0.9) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:1220px;margin:0 auto;padding:0 40px;color:#fff}
-.hero .overline{color:var(--steel-lite);margin-bottom:20px;display:block}
-.hero h1{font-size:clamp(2.5rem,6vw,5.1rem);font-weight:900;color:#fff;max-width:16ch;margin-bottom:22px;letter-spacing:-0.02em;line-height:0.98}
+.hero h1{font-size:clamp(2.3rem,5vw,4.2rem);font-weight:800;color:#fff;max-width:17ch;margin-bottom:22px;letter-spacing:-0.005em;line-height:1.06}
 .hero .lede{font-size:clamp(1.05rem,1.6vw,1.28rem);color:rgba(255,255,255,0.86);max-width:56ch;margin-bottom:32px;line-height:1.5}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .hero-cred{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.22);display:flex;gap:30px;flex-wrap:wrap;font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.82)}
 .hero-cred span{display:inline-flex;align-items:center;gap:9px}
 .hero-cred i{color:var(--steel-lite)}
 @media(max-width:768px){
-  .hero{padding:calc(var(--nav-h-sm) + 30px) 0 40px;min-height:92vh;min-height:92dvh}
-  .hero::before{background-position:center 26%}
+  .hero{padding:calc(var(--nav-h-sm) + 30px) 0 38px;min-height:0;align-items:flex-start}
+  .hero::before,.hero::after{display:none}
   .hero-inner{padding:0 22px}
-  .hero h1{font-size:clamp(2.2rem,10vw,3.1rem)}
-  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero h1{font-size:clamp(1.9rem,7.8vw,2.5rem);margin-bottom:16px}
+  .hero .lede{font-size:1rem;margin-bottom:24px}
+  .m-trim{display:none}
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:10px}
   .hero-ctas .btn{justify-content:center}
-  .hero-cred{gap:8px 22px;font-size:0.82rem}
+  .hero-photo-m{display:block;aspect-ratio:16/10;margin-top:26px;background-image:url('assets/shop-front.jpg');background-size:cover;background-position:center 30%;border:1px solid var(--line-d)}
+  .hero-cred{margin-top:0;padding-top:16px;border-top:none;display:grid;gap:9px;font-size:0.86rem}
 }
 
 /* STATEMENT */
 .statement{padding:104px 0}
 .statement-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start}
-.statement h2{font-size:clamp(1.9rem,3.6vw,3rem);color:var(--ink);letter-spacing:-0.02em;line-height:1.02}
+.statement h2{font-size:clamp(1.8rem,3.4vw,2.8rem);color:var(--ink);line-height:1.12}
 .statement h2 em{font-style:normal;color:var(--steel)}
 .statement .st-body{padding-top:6px}
 .statement .st-body p{font-size:1.08rem;color:var(--text-soft);line-height:1.72;margin-bottom:18px}
 .statement .st-body p:last-child{margin-bottom:0}
 .statement .st-body b{color:var(--ink);font-weight:700}
-@media(max-width:860px){.statement{padding:70px 0}.statement-grid{grid-template-columns:1fr;gap:26px}}
+@media(max-width:860px){.statement{padding:56px 0}.statement-grid{grid-template-columns:1fr;gap:20px}.statement .st-body p{font-size:1rem}}
 
 /* SERVICE BANDS */
 .bands{border-top:1px solid var(--line)}
@@ -160,53 +163,55 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .band-b3{background-image:url('assets/about-heavy-equip.jpg')}
 .band-text{padding:clamp(40px,5vw,80px);display:flex;flex-direction:column;justify-content:center;max-width:640px}
 .band.left .band-text{margin-left:auto}
-.band .b-num{font-size:0.8rem;font-weight:800;letter-spacing:0.14em;color:var(--steel);margin-bottom:16px}
-.band h3{font-size:clamp(1.7rem,2.8vw,2.5rem);color:var(--ink);margin-bottom:16px;letter-spacing:-0.02em}
+.band .b-num{font-family:'Hepta Slab',Georgia,serif;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;color:var(--steel);margin-bottom:16px}
+.band h3{font-size:clamp(1.6rem,2.6vw,2.3rem);color:var(--ink);margin-bottom:16px}
 .band p{font-size:1.04rem;color:var(--text-soft);line-height:1.66;margin-bottom:20px}
 .band .makes{font-size:0.86rem;font-weight:600;letter-spacing:0.02em;color:var(--ink);padding-top:18px;border-top:1px solid var(--line);margin-bottom:24px}
 .band.right .band-photo{order:2}
 .band.alt{background:var(--bone-2)}
 @media(max-width:860px){
   .band{grid-template-columns:1fr}
-  .band-photo{min-height:0;aspect-ratio:16/10;order:1 !important}
-  .band-text{order:2;padding:34px 22px;max-width:none;margin:0 !important}
+  .band-photo{min-height:0;aspect-ratio:16/9;order:1 !important}
+  .band-text{order:2;padding:28px 22px 38px;max-width:none;margin:0 !important}
+  .band h3{margin-bottom:12px}
+  .band p{font-size:0.98rem;margin-bottom:16px}
+  .band .makes{font-size:0.82rem;padding-top:14px;margin-bottom:20px}
+  .tlink{padding:12px 0 8px}
 }
 
 /* SPEC LINE */
 .spec{padding:88px 0;background:var(--ink);color:var(--bone)}
-.spec .overline{color:var(--steel-lite);display:block;margin-bottom:14px}
-.spec h2{font-size:clamp(1.7rem,3vw,2.5rem);color:#fff;max-width:20ch;margin-bottom:42px;letter-spacing:-0.02em}
+.spec h2{font-size:clamp(1.6rem,2.8vw,2.3rem);color:#fff;max-width:22ch;margin-bottom:42px}
 .spec-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .spec-item{padding:26px 26px 26px 0;border-top:2px solid var(--steel)}
 .spec-item:not(:last-child){border-right:1px solid var(--line-d-soft)}
-.spec-item .sn{font-size:0.78rem;font-weight:800;letter-spacing:0.14em;color:var(--steel-lite);display:block;margin-bottom:10px}
-.spec-item h4{font-size:1.16rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.01em}
+.spec-item .sn{font-family:'Hepta Slab',Georgia,serif;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;color:var(--steel-lite);display:block;margin-bottom:10px}
+.spec-item h4{font-size:1.12rem;font-weight:700;color:#fff;margin-bottom:8px}
 .spec-item p{font-size:0.9rem;color:rgba(237,239,241,0.68);line-height:1.55}
 .spec-item:not(:first-child){padding-left:26px}
-@media(max-width:860px){.spec{padding:62px 0}.spec-grid{grid-template-columns:1fr 1fr}.spec-item:nth-child(2){border-right:none}.spec-item:first-child{padding-left:0}.spec-item:nth-child(odd){padding-left:0}.spec-item:nth-child(even){padding-left:26px}}
-@media(max-width:520px){.spec-grid{grid-template-columns:1fr}.spec-item{border-right:none !important;padding-left:0 !important}}
+@media(max-width:860px){.spec{padding:62px 0}.spec h2{margin-bottom:28px}.spec-grid{grid-template-columns:1fr 1fr}.spec-item:nth-child(2){border-right:none}.spec-item:first-child{padding-left:0}.spec-item:nth-child(odd){padding-left:0}.spec-item:nth-child(even){padding-left:26px}}
+@media(max-width:520px){.spec{padding:54px 0}.spec-item{padding:16px 12px 18px 0}.spec-item:nth-child(even){padding-left:16px}.spec-item .sn{font-size:0.72rem;margin-bottom:7px}.spec-item h4{font-size:0.98rem}.spec-item p{font-size:0.82rem}}
 
 /* STORY / RON */
 .story{background:var(--graphite);color:var(--bone);display:grid;grid-template-columns:0.82fr 1.18fr;align-items:stretch}
 .story-photo{min-height:600px;background-image:url('assets/owner-ron.jpg');background-size:cover;background-position:center 12%}
 .story-text{padding:clamp(52px,6vw,96px) clamp(40px,5vw,84px)}
-.story .overline{color:var(--steel-lite);display:block;margin-bottom:16px}
-.story h2{font-size:clamp(1.9rem,3.4vw,2.9rem);color:#fff;margin-bottom:20px;letter-spacing:-0.02em;max-width:18ch}
+.story h2{font-size:clamp(1.8rem,3.2vw,2.7rem);color:#fff;margin-bottom:20px;max-width:18ch}
 .story .intro{font-size:1.08rem;color:rgba(237,239,241,0.82);line-height:1.68;margin-bottom:8px}
 .story .intro b{color:#fff;font-weight:700}
 .timeline{list-style:none;margin-top:34px}
 .timeline li{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line-d-soft);align-items:baseline}
 .timeline li:last-child{border-bottom:1px solid var(--line-d-soft)}
-.timeline .yr{font-size:1.9rem;font-weight:900;color:var(--steel-lite);letter-spacing:-0.02em;line-height:1}
+.timeline .yr{font-family:'Hepta Slab',Georgia,serif;font-size:1.7rem;font-weight:800;color:var(--steel-lite);line-height:1}
 .timeline .td b{display:block;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:5px;letter-spacing:-0.01em}
 .timeline .td p{font-size:0.95rem;color:rgba(237,239,241,0.7);line-height:1.55}
 @media(max-width:920px){.story{grid-template-columns:1fr}.story-photo{min-height:0;aspect-ratio:4/3}}
-@media(max-width:520px){.timeline li{grid-template-columns:1fr;gap:6px}.timeline .yr{font-size:1.5rem}}
+@media(max-width:520px){.timeline li{grid-template-columns:58px 1fr;gap:16px;padding:18px 0}.timeline .yr{font-size:1.12rem}.timeline .td b{font-size:1.02rem}.timeline .td p{font-size:0.9rem}}
 
 /* GALLERY FILMSTRIP */
 .gallery{padding:88px 0 92px;background:var(--bone-2)}
 .gallery .gal-head{max-width:1220px;margin:0 auto 34px;padding:0 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.gallery .gal-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);color:var(--ink);letter-spacing:-0.02em}
+.gallery .gal-head h2{font-size:clamp(1.7rem,3vw,2.4rem);color:var(--ink)}
 .gallery .gal-head p{font-size:1.02rem;color:var(--text-soft);margin-top:8px;max-width:44ch}
 .gal-arrows{display:flex;gap:8px}
 .gal-arrows button{width:50px;height:50px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
@@ -214,32 +219,30 @@ body.drawer-open .mobile-actions{visibility:hidden}
 @media(max-width:768px){.gal-arrows{display:none}}
 .film{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 40px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-padding-left:40px}
 .film::-webkit-scrollbar{display:none}
-.frame{position:relative;flex:0 0 clamp(300px,44vw,560px);height:60vh;max-height:520px;min-height:360px;background-size:cover;background-position:center;scroll-snap-align:start;overflow:hidden}
+.frame{position:relative;flex:0 0 clamp(300px,44vw,560px);height:clamp(360px,56vh,520px);background-size:cover;background-position:center;scroll-snap-align:start;overflow:hidden}
 .frame .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;background:linear-gradient(0deg,rgba(21,25,29,0.86),rgba(21,25,29,0));color:#fff;font-weight:600;font-size:0.94rem;letter-spacing:0.01em}
 .frame .cap i{color:var(--steel-lite);margin-right:8px}
-@media(max-width:768px){.film{padding:0 22px 6px;scroll-padding-left:22px}.frame{flex:0 0 84%;height:52vh}}
+@media(max-width:768px){.gallery{padding:56px 0 60px}.gallery .gal-head{margin-bottom:24px;padding:0 22px}.film{padding:0 22px 6px;scroll-padding-left:22px}.frame{flex:0 0 84%;height:340px}}
 
 /* FAQ */
 .faq{padding:100px 0}
 .faq-grid{display:grid;grid-template-columns:0.42fr 0.58fr;gap:56px;align-items:start}
-.faq-intro .overline{display:block;margin-bottom:16px}
-.faq-intro h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:var(--ink);margin-bottom:18px;letter-spacing:-0.02em}
+.faq-intro h2{font-size:clamp(1.8rem,3.2vw,2.6rem);color:var(--ink);margin-bottom:18px}
 .faq-intro p{font-size:1.04rem;color:var(--text-soft);line-height:1.66;margin-bottom:26px}
 .accordion{border-top:1px solid var(--line)}
 .acc-item{border-bottom:1px solid var(--line)}
-.acc-head{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:22px;font-family:'Archivo',sans-serif;font-weight:700;font-size:1.14rem;color:var(--ink);letter-spacing:-0.01em}
+.acc-head{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:22px;font-family:'Hepta Slab',Georgia,serif;font-weight:600;font-size:1.06rem;line-height:1.4;color:var(--ink)}
 .acc-item.open .acc-head{color:var(--steel)}
 .acc-head i{color:var(--steel);transition:transform .3s;flex-shrink:0;font-size:0.9rem}
 .acc-item.open .acc-head i{transform:rotate(45deg)}
 .acc-body{max-height:0;overflow:hidden;transition:max-height .34s ease}
 .acc-body-inner{padding:0 4px 24px;color:var(--text-soft);font-size:1rem;line-height:1.68;max-width:60ch}
-@media(max-width:860px){.faq{padding:66px 0}.faq-grid{grid-template-columns:1fr;gap:30px}}
+@media(max-width:860px){.faq{padding:58px 0}.faq-grid{grid-template-columns:1fr;gap:26px}.acc-head{padding:18px 4px;font-size:1rem}}
 
 /* CONTACT */
 .contact{padding:100px 0;background:var(--ink);color:var(--bone)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.contact-left .overline{color:var(--steel-lite);display:block;margin-bottom:14px}
-.contact-left h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:#fff;margin-bottom:14px;letter-spacing:-0.02em}
+.contact-left h2{font-size:clamp(1.8rem,3.2vw,2.6rem);color:#fff;margin-bottom:14px}
 .contact-left .csub{color:rgba(237,239,241,0.74);font-size:1.04rem;line-height:1.6;margin-bottom:30px;max-width:42ch}
 .field{margin-bottom:22px}
 .field label{display:block;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:9px}
@@ -262,15 +265,15 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .creach{display:block;padding:20px 0;border-bottom:1px solid var(--line-d-soft)}
 .creach:first-child{padding-top:0}
 .creach .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:7px}
-.creach .cv{font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
-.creach .cv.sm{font-size:1.12rem;font-weight:600;letter-spacing:0}
+.creach .cv{font-family:'Hepta Slab',Georgia,serif;font-size:1.4rem;font-weight:700;color:#fff}
+.creach .cv.sm{font-family:'Archivo',sans-serif;font-size:1.12rem;font-weight:600;letter-spacing:0}
 a.creach .cv{transition:color .2s}
 a.creach:hover .cv{color:var(--steel-lite)}
 .hours{padding-top:20px}
 .hours .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:12px}
 .hrow{display:flex;justify-content:space-between;font-size:0.98rem;padding:6px 0;color:rgba(237,239,241,0.86)}
 .hrow .hi{color:#fff;font-weight:600}
-@media(max-width:900px){.contact{padding:66px 0}.contact-grid{grid-template-columns:1fr;gap:44px}.contact-right{border-left:none;border-top:1px solid var(--line-d);padding-left:0;padding-top:30px}}
+@media(max-width:900px){.contact{padding:58px 0}.contact-grid{grid-template-columns:1fr;gap:38px}.contact-right{border-left:none;border-top:1px solid var(--line-d);padding-left:0;padding-top:26px}}
 @media(max-width:460px){.frow{grid-template-columns:1fr;gap:0}}
 
 /* FOOTER */
@@ -281,7 +284,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 .foot-social{display:flex;gap:20px}
 .foot-social a{color:var(--text-soft);font-size:1.05rem;transition:color .2s}
 .foot-social a:hover{color:var(--steel)}
-.foot-col h4{font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
+.foot-col h4{font-family:'Archivo',sans-serif;font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
 .foot-col a{color:var(--text-soft);font-size:0.95rem;transition:color .2s}
 .foot-col a:hover{color:var(--steel)}
@@ -346,17 +349,17 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <span class="overline">Southwest Florida &middot; 38 years on heavy-duty A/C</span>
     <h1>When the A/C quits, we bring the shop to the machine.</h1>
-    <p class="lede">Mobile air conditioning and heater repair for medium and heavy trucks, heavy equipment, and farm machinery. One specialist, all makes, on-site at your yard, jobsite, or the roadside. No towing, no lowboy, no hauling it in.</p>
+    <p class="lede">Mobile air conditioning and heater repair for medium and heavy trucks, heavy equipment, and farm machinery across Southwest Florida. <span class="m-trim">One specialist, all makes, on-site at your yard, jobsite, or the roadside. </span>No towing, no lowboy, no hauling it in.</p>
     <div class="hero-ctas">
       <a href="tel:+19417772828" class="btn"><i class="fa-solid fa-phone-volume"></i> Call 941-777-2828</a>
       <a href="#contact" class="btn btn-ghost">Request a Quote</a>
     </div>
+    <div class="hero-photo-m" role="img" aria-label="The Big Truck A/C Shop service truck, the mobile shop that comes to you"></div>
     <div class="hero-cred">
-      <span><i class="fa-solid fa-snowflake"></i> MACS certified</span>
+      <span><i class="fa-solid fa-snowflake"></i> MACS certified, 38 years on the trade</span>
       <span><i class="fa-solid fa-truck-front"></i> All makes of truck, equipment &amp; ag</span>
-      <span><i class="fa-solid fa-location-crosshairs"></i> We come to you</span>
+      <span><i class="fa-solid fa-location-crosshairs"></i> Serving all of Southwest Florida, we come to you</span>
     </div>
   </div>
 </header>
@@ -382,7 +385,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
       <span class="b-num">01 / Trucks</span>
       <h3>Truck A/C &amp; Heat</h3>
       <p>Medium and heavy-duty trucks and vocational rigs. Compressor and clutch, condenser, evaporator, blower motors, heater cores, controls, recharge, and full leak diagnosis. If it blows warm, we find out why and fix it right the first time.</p>
-      <div class="makes">Freightliner &middot; International &middot; Peterbilt &middot; Kenworth &middot; Mack &middot; Volvo</div>
+      <div class="makes">Freightliner, International, Peterbilt, Kenworth, Mack, and Volvo, among others.</div>
       <a href="#contact" class="tlink">Get truck A/C service <i class="fa-solid fa-arrow-right-long"></i></a>
     </div>
   </div>
@@ -392,7 +395,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
       <span class="b-num">02 / Heavy Equipment</span>
       <h3>Heavy Equipment A/C</h3>
       <p>Excavators, loaders, skid steers, dozers, cranes, and lifts. Operator comfort is not a luxury when the seat time runs all day in Florida heat. We repair sealed and open-cab systems where the machine sits.</p>
-      <div class="makes">Caterpillar &middot; John Deere &middot; Komatsu &middot; Case &middot; Bobcat</div>
+      <div class="makes">Caterpillar, John Deere, Komatsu, Case, and Bobcat, among others.</div>
       <a href="#contact" class="tlink">Get equipment A/C service <i class="fa-solid fa-arrow-right-long"></i></a>
     </div>
   </div>
@@ -402,7 +405,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
       <span class="b-num">03 / Ag &amp; Fleet</span>
       <h3>Ag &amp; Fleet A/C</h3>
       <p>Tractors, harvesters, and farm machinery, plus vocational and municipal fleet trucks. Long field days and long routes are hard on cab A/C. We keep ag equipment and fleets cooling through the season so the work does not stop.</p>
-      <div class="makes">John Deere &middot; Kubota &middot; New Holland &middot; Case IH &middot; Fleet &amp; municipal</div>
+      <div class="makes">John Deere, Kubota, New Holland, and Case IH, plus fleet and municipal rigs.</div>
       <a href="#contact" class="tlink">Get ag &amp; fleet service <i class="fa-solid fa-arrow-right-long"></i></a>
     </div>
   </div>
@@ -411,7 +414,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 <!-- SPEC -->
 <section class="spec">
   <div class="wrap">
-    <span class="overline">The whole system</span>
+    <div class="rule"></div>
     <h2>We diagnose and repair the entire A/C system, not just the easy parts.</h2>
     <div class="spec-grid">
       <div class="spec-item"><span class="sn">01</span><h4>Full Diagnosis</h4><p>Checked end to end so the real fault gets found, not guessed at.</p></div>
@@ -426,7 +429,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 <section id="story" class="story">
   <div class="story-photo" role="img" aria-label="Ron Sposato, owner of The Big Truck A/C Shop and heavy-duty air conditioning specialist"></div>
   <div class="story-text">
-    <span class="overline">The specialist</span>
+    <div class="rule"></div>
     <h2>38 years, one trade: air conditioning.</h2>
     <p class="intro">The Big Truck A/C Shop is not a general repair outfit that also touches A/C. <b>Air conditioning is all Ron Sposato has done since 1985</b>, from dealership service bays to heavy equipment to a statewide fleet. That focus is why the system gets fixed right.</p>
     <ul class="timeline">
@@ -466,7 +469,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
   <div class="wrap">
     <div class="faq-grid">
       <div class="faq-intro">
-        <span class="overline">Straight answers</span>
+        <div class="rule"></div>
         <h2>Before you call, the answers.</h2>
         <p>Coverage, machines, makes, and how mobile A/C service actually works. Still stuck? Call or leave a message and ask.</p>
         <a href="tel:+19417772828" class="btn btn-ink"><i class="fa-solid fa-phone-volume"></i> 941-777-2828</a>
@@ -491,7 +494,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-left">
-        <span class="overline">Get a quote</span>
+        <div class="rule"></div>
         <h2>Tell us what is not cooling.</h2>
         <p class="csub">Send the make, the machine, and the symptom. We get back to you fast with a plan and a number.</p>
         <form id="quoteForm" name="quote" method="POST" novalidate onsubmit="return submitForm(event)">
@@ -698,6 +701,14 @@ if ('scrollRestoration' in history) { history.scrollRestoration = 'auto'; }
 
   document.querySelectorAll('#quoteForm input,#quoteForm select,#quoteForm textarea').forEach(function(el){
     el.addEventListener('input',function(){var fld=el.closest('.field');if(fld)fld.classList.remove('err');});
+  });
+
+  var rsz;
+  window.addEventListener('resize',function(){
+    clearTimeout(rsz);
+    rsz=setTimeout(function(){
+      document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){b.style.maxHeight=b.scrollHeight+'px';});
+    },120);
   });
 })();
 
