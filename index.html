@@ -77,12 +77,13 @@ img{max-width:100%;display:block}
 /* NAV */
 nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--bone);border-bottom:1px solid var(--line);display:flex;align-items:center}
 .nav-inner{width:100%;max-width:1320px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.wordmark{display:inline-flex;align-items:center;gap:12px}
-.brand-badge{height:46px;width:auto}
+.wordmark{display:inline-flex;align-items:center;gap:13px}
+.brand-badge{height:44px;width:auto}
 .brand-txt{display:flex;flex-direction:column;line-height:1.05}
-.brand-txt .bt{font-weight:800;font-size:1.04rem;letter-spacing:-0.01em;color:var(--ink);text-transform:uppercase}
-.brand-txt .sub{font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--steel);margin-top:2px}
-@media(max-width:600px){.brand-txt{display:none}}
+.brand-txt .bt{font-family:'Hepta Slab',Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--ink);white-space:nowrap}
+.brand-txt .sub{font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--steel);margin-top:3px}
+@media(max-width:600px){.nav-inner{padding:0 16px}.brand-badge{height:30px}.brand-txt .bt{font-size:0.78rem}.brand-txt .sub{display:none}.wordmark{gap:8px}.mobile-actions{gap:8px}}
+@media(max-width:374px){.brand-txt{display:none}}
 .nav-links{display:flex;gap:30px;list-style:none}
 .nav-links a{font-weight:600;font-size:0.88rem;color:var(--text);letter-spacing:0.01em;transition:color .2s}
 .nav-links a:hover{color:var(--steel)}
@@ -100,18 +101,20 @@ nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)
 .hamburger span{display:block;width:22px;height:2.5px;background:var(--ink)}
 
 /* DRAWER */
-.nav-drawer{position:fixed;top:0;right:0;width:330px;max-width:88vw;height:100dvh;background:var(--graphite);z-index:1001;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.nav-drawer{position:fixed;top:0;right:0;width:330px;max-width:88vw;height:100dvh;background:var(--bone);z-index:1001;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);border-left:1px solid var(--line)}
 .nav-drawer.open{transform:translateX(0)}
-.drawer-header{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line-d)}
-.drawer-header .dh-name{font-weight:800;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:-0.01em}
-.drawer-close{background:none;border:none;font-size:1.4rem;color:var(--bone);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
-.drawer-close:hover{color:var(--steel-lite)}
+.drawer-header{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line)}
+.drawer-brand{display:inline-flex;align-items:center;gap:10px}
+.drawer-brand img{height:34px;width:auto}
+.drawer-header .dh-name{font-family:'Hepta Slab',Georgia,serif;font-weight:700;color:var(--ink);font-size:0.92rem}
+.drawer-close{background:none;border:none;font-size:1.4rem;color:var(--ink);cursor:pointer;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center}
+.drawer-close:hover{color:var(--steel)}
 .drawer-links{display:flex;flex-direction:column;flex:1;overflow-y:auto;min-height:0;padding:8px 0}
-.drawer-links a{padding:16px 22px;color:var(--bone);font-family:'Hepta Slab',Georgia,serif;font-weight:600;font-size:1.12rem;border-bottom:1px solid var(--line-d-soft);transition:color .2s,background .2s,padding-left .2s}
-.drawer-links a:hover{color:#fff;background:var(--graphite-2);padding-left:28px}
-.drawer-footer{padding:18px 22px calc(20px + env(safe-area-inset-bottom));border-top:1px solid var(--line-d);display:flex;flex-direction:column;gap:12px}
-.drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--ink);font-weight:800;font-size:1.02rem;padding:13px}
-.drawer-phone i{color:var(--steel)}
+.drawer-links a{padding:16px 22px;color:var(--ink);font-family:'Hepta Slab',Georgia,serif;font-weight:600;font-size:1.12rem;border-bottom:1px solid var(--line-soft);transition:color .2s,background .2s,padding-left .2s}
+.drawer-links a:hover{color:var(--steel);background:var(--bone-2);padding-left:28px}
+.drawer-footer{padding:18px 22px calc(20px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bone-2);display:flex;flex-direction:column;gap:12px}
+.drawer-phone{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff;font-weight:800;font-size:1.02rem;padding:13px}
+.drawer-phone i{color:var(--steel-lite)}
 .drawer-footer .btn{justify-content:center}
 .nav-overlay{position:fixed;inset:0;background:rgba(10,13,16,0.6);z-index:1000;display:none}
 .nav-overlay.open{display:block}
@@ -180,14 +183,14 @@ body.drawer-open .mobile-actions{visibility:hidden}
 }
 
 /* SPEC LINE */
-.spec{padding:88px 0;background:var(--ink);color:var(--bone)}
-.spec h2{font-size:clamp(1.6rem,2.8vw,2.3rem);color:#fff;max-width:22ch;margin-bottom:42px}
+.spec{padding:88px 0;background:var(--white)}
+.spec h2{font-size:clamp(1.6rem,2.8vw,2.3rem);color:var(--ink);max-width:22ch;margin-bottom:42px}
 .spec-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.spec-item{padding:26px 26px 26px 0;border-top:2px solid var(--steel)}
-.spec-item:not(:last-child){border-right:1px solid var(--line-d-soft)}
-.spec-item .sn{font-family:'Hepta Slab',Georgia,serif;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;color:var(--steel-lite);display:block;margin-bottom:10px}
-.spec-item h4{font-size:1.12rem;font-weight:700;color:#fff;margin-bottom:8px}
-.spec-item p{font-size:0.9rem;color:rgba(237,239,241,0.68);line-height:1.55}
+.spec-item{padding:26px 26px 26px 0;border-top:2px solid var(--ink)}
+.spec-item:not(:last-child){border-right:1px solid var(--line-soft)}
+.spec-item .sn{font-family:'Hepta Slab',Georgia,serif;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;color:var(--steel);display:block;margin-bottom:10px}
+.spec-item h4{font-size:1.12rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.spec-item p{font-size:0.9rem;color:var(--text-soft);line-height:1.55}
 .spec-item:not(:first-child){padding-left:26px}
 @media(max-width:860px){.spec{padding:62px 0}.spec h2{margin-bottom:28px}.spec-grid{grid-template-columns:1fr 1fr}.spec-item:nth-child(2){border-right:none}.spec-item:first-child{padding-left:0}.spec-item:nth-child(odd){padding-left:0}.spec-item:nth-child(even){padding-left:26px}}
 @media(max-width:520px){.spec{padding:54px 0}.spec-item{padding:16px 12px 18px 0}.spec-item:nth-child(even){padding-left:16px}.spec-item .sn{font-size:0.72rem;margin-bottom:7px}.spec-item h4{font-size:0.98rem}.spec-item p{font-size:0.82rem}}
@@ -262,24 +265,22 @@ body.drawer-open .mobile-actions{visibility:hidden}
 .form-status.success{background:rgba(127,174,201,0.14);color:#cfe1ec}
 .form-status.error{background:rgba(226,123,110,0.14);color:#f0b7ae;border-left-color:#E27B6E}
 .contact-right{border-left:1px solid var(--line-d);padding-left:56px}
-.creach{display:block;padding:20px 0;border-bottom:1px solid var(--line-d-soft)}
-.creach:first-child{padding-top:0}
-.creach .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:7px}
-.creach .cv{font-family:'Hepta Slab',Georgia,serif;font-size:1.4rem;font-weight:700;color:#fff}
-.creach .cv.sm{font-family:'Archivo',sans-serif;font-size:1.12rem;font-weight:600;letter-spacing:0}
-a.creach .cv{transition:color .2s}
-a.creach:hover .cv{color:var(--steel-lite)}
-.hours{padding-top:20px}
-.hours .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:12px}
+.contact .cl{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel-lite);margin-bottom:12px}
+.next{padding-bottom:24px;border-bottom:1px solid var(--line-d-soft);margin-bottom:26px}
+.nrow{display:flex;gap:14px;align-items:baseline;padding:7px 0;font-size:0.98rem;color:rgba(237,239,241,0.85);line-height:1.55}
+.nrow .nn{font-family:'Hepta Slab',Georgia,serif;font-weight:800;color:var(--steel-lite);font-size:1.05rem;flex-shrink:0}
 .hrow{display:flex;justify-content:space-between;font-size:0.98rem;padding:6px 0;color:rgba(237,239,241,0.86)}
 .hrow .hi{color:#fff;font-weight:600}
+.c-note{margin-top:22px;padding-top:18px;border-top:1px solid var(--line-d-soft);font-size:0.94rem;color:rgba(237,239,241,0.66);line-height:1.6}
 @media(max-width:900px){.contact{padding:58px 0}.contact-grid{grid-template-columns:1fr;gap:38px}.contact-right{border-left:none;border-top:1px solid var(--line-d);padding-left:0;padding-top:26px}}
 @media(max-width:460px){.frow{grid-template-columns:1fr;gap:0}}
 
 /* FOOTER */
 footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px}
-.foot-brand .fb-logo{height:64px;width:auto;margin-bottom:16px}
+.foot-wordmark{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.foot-wordmark img{height:42px;width:auto}
+.foot-wordmark span{font-family:'Hepta Slab',Georgia,serif;font-weight:700;font-size:1.06rem;color:var(--ink)}
 .foot-brand p{color:var(--text-soft);font-size:0.94rem;line-height:1.62;max-width:34ch;margin-bottom:18px}
 .foot-social{display:flex;gap:20px}
 .foot-social a{color:var(--text-soft);font-size:1.05rem;transition:color .2s}
@@ -304,8 +305,8 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="#top" class="wordmark" aria-label="The Big Truck A/C Shop home">
-      <img class="brand-badge" fetchpriority="high" src="assets/logo.png" alt="The Big Truck A/C Shop logo, an emblem of a semi truck flanked by a backhoe loader and a farm tractor">
-      <span class="brand-txt"><span class="bt">Big Truck A/C Shop</span><span class="sub">Our Shop Comes To You</span></span>
+      <img class="brand-badge" fetchpriority="high" src="assets/logo-mark.png" alt="The Big Truck A/C Shop mark, a semi truck flanked by a backhoe loader and a farm tractor">
+      <span class="brand-txt"><span class="bt">The Big Truck A/C Shop</span><span class="sub">Our Shop Comes To You</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#work">The Work</a></li>
@@ -327,7 +328,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
 <div class="nav-overlay" id="navOverlay"></div>
 <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="Site menu">
   <div class="drawer-header">
-    <span class="dh-name">Big Truck A/C</span>
+    <span class="drawer-brand"><img src="assets/logo-mark.png" alt="The Big Truck A/C Shop mark"><span class="dh-name">The Big Truck A/C Shop</span></span>
     <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <nav class="drawer-links">
@@ -480,10 +481,10 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
         <div class="acc-item"><button class="acc-head" aria-expanded="false">Do you fix the heater too, or only A/C? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Both. We repair complete air conditioning and heater systems, including heater cores, blower motors, and controls. Cold air in summer, warm air on those chilly Florida mornings.</div></div></div>
         <div class="acc-item"><button class="acc-head" aria-expanded="false">Which makes and models do you service? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">All makes. Freightliner, International, Peterbilt, Kenworth, Mack, and Volvo on trucks; Caterpillar, John Deere, Komatsu, Case, and Bobcat on equipment; John Deere, Kubota, New Holland, and Case IH on ag. With 38 years across dealerships, heavy equipment, and fleets, there is very little we have not seen.</div></div></div>
         <div class="acc-item"><button class="acc-head" aria-expanded="false">My A/C runs but does not blow cold. Can you find the leak? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Yes. A system that runs warm is usually low on refrigerant from a leak, or has a failing compressor or control issue. We run a full diagnosis, find the leak, repair the seal or line, and recharge it properly so it holds instead of leaking back out.</div></div></div>
-        <div class="acc-item"><button class="acc-head" aria-expanded="false">What area do you cover? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Our home base is Southwest Florida and that is where we run day to day. For larger heavy-equipment and fleet jobs we travel farther across the state. Call with your location and the machine and we will tell you straight whether we can get to you.</div></div></div>
+        <div class="acc-item"><button class="acc-head" aria-expanded="false">What area do you cover? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Our home base is Southwest Florida: Sarasota, Bradenton, Venice, North Port, Port Charlotte, Punta Gorda, and down to Fort Myers. For larger heavy-equipment and fleet jobs we travel farther across the state. Call with your location and the machine and we will tell you straight whether we can get to you.</div></div></div>
         <div class="acc-item"><button class="acc-head" aria-expanded="false">What does a heavy-duty A/C repair cost? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">It depends on the machine and what the system needs, so the honest answer is that we diagnose first and give you the number before the work starts. The goal is always correct, on time, and within your budget.</div></div></div>
         <div class="acc-item"><button class="acc-head" aria-expanded="false">Are the parts good quality? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Yes. We only use parts from reputable brands so your truck, equipment, or ag machine keeps cooling at its best long after the repair. Cutting corners on A/C parts just means a second breakdown.</div></div></div>
-        <div class="acc-item"><button class="acc-head" aria-expanded="false">How do I reach you and what are your hours? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Call or text 941-777-2828, or email bigtruckacshop@gmail.com. We answer and schedule Monday through Friday, and if we are under a hood when you call, leave a message and we will get right back to you.</div></div></div>
+        <div class="acc-item"><button class="acc-head" aria-expanded="false">How do I reach you and what are your hours? <i class="fa-solid fa-plus"></i></button><div class="acc-body"><div class="acc-body-inner">Call or text 941-777-2828, or email bigtruckacshop@gmail.com. Hours are Monday through Friday, 12:00 pm to 11:00 pm, and if we are under a hood when you call, leave a message and we will get right back to you.</div></div></div>
       </div>
     </div>
   </div>
@@ -537,16 +538,18 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
         </form>
       </div>
       <div class="contact-right">
-        <a href="tel:+19417772828" class="creach"><div class="cl">Call or Text</div><div class="cv">941-777-2828</div></a>
-        <a href="mailto:bigtruckacshop@gmail.com" class="creach"><div class="cl">Email</div><div class="cv sm">bigtruckacshop@gmail.com</div></a>
-        <div class="creach"><div class="cl">Service Area</div><div class="cv sm">Southwest Florida. Our shop comes to you.</div></div>
-        <a href="https://www.facebook.com/1514468738674634" target="_blank" rel="noopener" class="creach"><div class="cl">Follow</div><div class="cv sm">The Big Truck A/C Shop on Facebook</div></a>
+        <div class="next">
+          <div class="cl">What happens next</div>
+          <div class="nrow"><span class="nn">1</span><span>We call you back fast to talk symptoms, machine, and location.</span></div>
+          <div class="nrow"><span class="nn">2</span><span>The service truck rolls out and diagnoses the system on-site.</span></div>
+          <div class="nrow"><span class="nn">3</span><span>You get the number before any work starts. Correct, on time, within budget.</span></div>
+        </div>
         <div class="hours">
           <div class="cl">Hours</div>
-          <div class="hrow"><span>Monday to Friday</span><span class="hi">By appointment</span></div>
+          <div class="hrow"><span>Monday to Friday</span><span class="hi">12:00 pm to 11:00 pm</span></div>
           <div class="hrow"><span>Saturday &amp; Sunday</span><span>Closed</span></div>
-          <div class="hrow"><span>Missed us?</span><span class="hi">Leave a message</span></div>
         </div>
+        <p class="c-note">We're there when you need us. If we're under a hood when you call, leave a message and we'll get right back to you.</p>
       </div>
     </div>
   </div>
@@ -557,7 +560,7 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img class="fb-logo" src="assets/logo.png" alt="The Big Truck A/C Shop logo">
+        <a href="#top" class="foot-wordmark"><img src="assets/logo-mark.png" alt="The Big Truck A/C Shop logo mark"><span>The Big Truck A/C Shop</span></a>
         <p>Southwest Florida's mobile heavy-duty air conditioning specialist. Trucks, heavy equipment, and ag, repaired on-site by a MACS-certified A/C specialist with 38 years on the trade.</p>
         <div class="foot-social">
           <a href="https://www.facebook.com/1514468738674634" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -589,8 +592,8 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
         <address>
           <a href="tel:+19417772828">941-777-2828</a><br>
           <a href="mailto:bigtruckacshop@gmail.com">bigtruckacshop@gmail.com</a><br>
-          Southwest Florida<br>
-          Mobile service, we come to you
+          Mon to Fri, 12:00 pm to 11:00 pm<br>
+          Southwest Florida, we come to you
         </address>
       </div>
     </div>
@@ -639,10 +642,10 @@ footer{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 30
     {"@type":"Question","name":"Do you fix the heater too, or only A/C?","acceptedAnswer":{"@type":"Answer","text":"Both. We repair complete air conditioning and heater systems, including heater cores, blower motors, and controls."}},
     {"@type":"Question","name":"Which makes and models do you service?","acceptedAnswer":{"@type":"Answer","text":"All makes. Freightliner, International, Peterbilt, Kenworth, Mack, and Volvo on trucks; Caterpillar, John Deere, Komatsu, Case, and Bobcat on equipment; John Deere, Kubota, New Holland, and Case IH on ag."}},
     {"@type":"Question","name":"My A/C runs but does not blow cold. Can you find the leak?","acceptedAnswer":{"@type":"Answer","text":"Yes. A system that runs warm is usually low on refrigerant from a leak, or has a failing compressor or control issue. We run a full diagnosis, find the leak, repair the seal or line, and recharge it properly so it holds."}},
-    {"@type":"Question","name":"What area do you cover?","acceptedAnswer":{"@type":"Answer","text":"Our home base is Southwest Florida and that is where we run day to day. For larger heavy-equipment and fleet jobs we travel farther across the state. Call with your location and the machine for a straight answer."}},
+    {"@type":"Question","name":"What area do you cover?","acceptedAnswer":{"@type":"Answer","text":"Our home base is Southwest Florida: Sarasota, Bradenton, Venice, North Port, Port Charlotte, Punta Gorda, and down to Fort Myers. For larger heavy-equipment and fleet jobs we travel farther across the state. Call with your location and the machine for a straight answer."}},
     {"@type":"Question","name":"What does a heavy-duty A/C repair cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on the machine and what the system needs. We diagnose first and give you the number before the work starts. The goal is correct, on time, and within your budget."}},
     {"@type":"Question","name":"Are the parts good quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. We only use parts from reputable brands so your truck, equipment, or ag machine keeps cooling at its best long after the repair."}},
-    {"@type":"Question","name":"How do I reach you and what are your hours?","acceptedAnswer":{"@type":"Answer","text":"Call or text 941-777-2828, or email bigtruckacshop@gmail.com. We answer and schedule Monday through Friday, and if we are under a hood, leave a message and we will get right back to you."}}
+    {"@type":"Question","name":"How do I reach you and what are your hours?","acceptedAnswer":{"@type":"Answer","text":"Call or text 941-777-2828, or email bigtruckacshop@gmail.com. Hours are Monday through Friday, 12:00 pm to 11:00 pm, and if we are under a hood, leave a message and we will get right back to you."}}
   ]
 }
 </script>
